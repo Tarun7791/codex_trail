@@ -1,0 +1,154 @@
+:root {
+  --bg: #090b10;
+  --card: #10141d;
+  --card-soft: #151b26;
+  --text: #f2f6ff;
+  --muted: #9fb0cb;
+  --primary: #5b8cff;
+  --border: #243046;
+  --success: #42d392;
+}
+
+:root.light {
+  --bg: #f4f7ff;
+  --card: #ffffff;
+  --card-soft: #eef2fb;
+  --text: #101827;
+  --muted: #54627a;
+  --primary: #3d63dd;
+  --border: #d2dcee;
+  --success: #17a365;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(1200px 800px at 20% -20%, #1e2a45, transparent 55%), var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { font-weight: 800; }
+nav { display: flex; gap: 18px; }
+nav a { color: var(--muted); text-decoration: none; }
+
+main {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 0 18px 36px;
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, var(--card), var(--card-soft));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.hero { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; }
+.eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; }
+h1 { margin: 8px 0 12px; font-size: clamp(1.8rem, 2.8vw, 2.7rem); }
+h2 { margin: 0 0 14px; }
+h3 { margin-top: 0; }
+p, li { color: var(--muted); line-height: 1.55; }
+
+.hero-actions { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+
+.primary-btn,
+.ghost-btn {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  color: var(--text);
+  font: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-btn { background: linear-gradient(135deg, var(--primary), #4162c9); border: none; }
+.ghost-btn { background: transparent; }
+.full { width: 100%; }
+
+.stats { display: grid; gap: 10px; }
+.stat { border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.stat span { font-size: 1.6rem; font-weight: 800; display: block; color: var(--success); }
+
+.grid { display: grid; gap: 12px; }
+.grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.tile { border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.tile h4 { margin: 0 0 8px; }
+
+.demo-layout { display: grid; gap: 12px; grid-template-columns: 1.2fr 1.2fr 0.9fr; }
+.stack { display: grid; gap: 8px; margin-bottom: 12px; }
+input, textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--text);
+  font: inherit;
+}
+
+.goal-list, .feed-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.goal-item, .post-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  background: color-mix(in srgb, var(--card-soft) 88%, transparent);
+}
+
+.goal-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.goal-actions { display: flex; gap: 6px; }
+.small-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border);
+  padding: 8px 0;
+}
+
+.muted { color: var(--muted); }
+footer { text-align: center; color: var(--muted); padding: 12px 0 28px; }
+
+@media (max-width: 1000px) {
+  .hero, .demo-layout, .grid.three, .grid.two { grid-template-columns: 1fr; }
+  nav { display: none; }
+}

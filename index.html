@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accountability Platform Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">ConsistencyOS</div>
+      <nav>
+        <a href="#demo">Live Demo</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#schema">Schema</a>
+      </nav>
+      <button id="themeToggle" class="ghost-btn">Toggle theme</button>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">Accountability Platform</p>
+          <h1>Stay consistent with goals, streaks, and peer visibility.</h1>
+          <p>
+            A focused platform for college students, placement prep learners, DSA problem-solvers, and self-learners.
+          </p>
+          <div class="hero-actions">
+            <a href="#demo" class="primary-btn">Try Live Demo</a>
+            <button id="simulateDayBtn" class="ghost-btn">Simulate a Productive Day</button>
+          </div>
+        </div>
+        <aside class="stats">
+          <div class="stat"><span id="heroStreak">6</span><label>Current streak</label></div>
+          <div class="stat"><span id="heroConsistency">78%</span><label>Weekly consistency</label></div>
+          <div class="stat"><span id="heroXp">320</span><label>XP points</label></div>
+        </aside>
+      </section>
+
+      <section id="demo" class="card">
+        <h2>Interactive Demo</h2>
+        <p class="muted">Set goals, complete tasks, post progress, and watch your streak/XP update in real time.</p>
+
+        <div class="demo-layout">
+          <article class="tile">
+            <h3>Today's Goals</h3>
+            <form id="goalForm" class="stack">
+              <input id="goalInput" type="text" placeholder="e.g. Solve 3 DSA problems" maxlength="90" />
+              <button class="primary-btn" type="submit">Add Goal</button>
+            </form>
+            <ul id="goalList" class="goal-list"></ul>
+          </article>
+
+          <article class="tile">
+            <h3>Progress Feed</h3>
+            <form id="postForm" class="stack">
+              <textarea id="postInput" rows="3" maxlength="180" placeholder="Share progress update..."></textarea>
+              <button class="ghost-btn" type="submit">Post Update</button>
+            </form>
+            <ul id="postList" class="feed-list"></ul>
+          </article>
+
+          <article class="tile">
+            <h3>Demo Metrics</h3>
+            <div class="metric-row"><span>Completed today</span><strong id="completedToday">0</strong></div>
+            <div class="metric-row"><span>Pending today</span><strong id="pendingToday">0</strong></div>
+            <div class="metric-row"><span>Streak</span><strong id="demoStreak">6 days</strong></div>
+            <div class="metric-row"><span>XP</span><strong id="demoXp">320</strong></div>
+            <div class="metric-row"><span>Weekly consistency</span><strong id="demoConsistency">78%</strong></div>
+            <button id="resetDemoBtn" class="ghost-btn full" type="button">Reset Demo Data</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="features" class="card">
+        <h2>Core Features</h2>
+        <div class="grid three" id="featuresGrid"></div>
+      </section>
+
+      <section id="roadmap" class="card">
+        <h2>Feature Roadmap</h2>
+        <div id="roadmapGrid" class="grid two"></div>
+      </section>
+
+      <section id="schema" class="card">
+        <h2>Database Schema (MongoDB)</h2>
+        <p class="muted">Essential collections for a scalable release.</p>
+        <div id="schemaGrid" class="grid three"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for deep work, not doom scroll.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
